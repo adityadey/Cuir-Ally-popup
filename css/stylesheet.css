@@ -1,0 +1,44 @@
+.image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+h2 { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+
+
+
+.label {
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+
+.form-control-feedback{
+  display: none;
+}
+
+#popup_this {
+    top: 50%;
+    left: 50%;
+    text-align:center;
+    margin-top: -50px;
+    margin-left: -100px;
+    position: fixed;
+    padding: 30px;
+}
+
+.b-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    color: #fff;
+    background: #ff0000;
+    padding: 5px 10px;
+}

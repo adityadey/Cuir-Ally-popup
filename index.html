@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cuir Ally Popup</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Ubuntu:400,500,700" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link href="C:\Users\Aditya Dey\Desktop\CuirAlly popup\css\stylesheet.css" rel="stylesheet">
+	<link href="C:\Users\Aditya Dey\Desktop\CuirAlly popup\css\formvalidation.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="C:\Users\Aditya Dey\Desktop\CuirAlly popup\js\formvalidation.js"></script>
+	<script src="C:\Users\Aditya Dey\Desktop\CuirAlly popup\js\jquery.js"></script>
+	<script src="C:\Users\Aditya Dey\Desktop\CuirAlly popup\js\jquery.bpopup.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+	<script>
+	$('#form-group').validate();
+	$( document ).ready(function() {
+    $('#popup_this').bPopup({
+            modalClose: false,
+            opacity: 0.6,
+            positionStyle: 'fixed' //'fixed' or 'absolute'
+        });
+	});
+	</script>
+	<script>
+	$(document).ready(function() {
+     $('#user-form').validate({
+    rules: {
+      email: {
+        required: true,
+        email: true
+      },
+    },
+    
+    highlight: function(element, errorClass, validClass) { 
+      $(element).nextAll('.form-control-feedback').show().removeClass('glyphicon-ok').addClass('glyphicon-remove');
+      $(element).addClass(errorClass).removeClass(validClass);
+      $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+    },
+    success: function(element) {
+      $(element).nextAll('.form-control-feedback').show().removeClass('glyphicon-remove').addClass('glyphicon-ok');
+   element.closest('.form-group').removeClass('has-error').addClass('has-success');
+      $(element).remove();
+    }
+  });
+});
+</script>
+</head>
+<body>
+  <div id="popup_this">
+  		<div class="image">
+
+      	<img src="background.jpg" alt="" />
+  	    <span class="button b-close">
+        <span>X</span>
+    	</span>
+      <h2><strong>THE BIGGEST SALE EVER</strong></h2>
+      <h2>Get Rs.500 Flat Discount </h2>
+      <h2>Steps to get your Discount Code</h2>
+      </p>
+     <form id="user-form" class="example">
+       <div class="form-group has-feedback">
+         <label class="control-label" for="email">1)</label><input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email ID">
+         <span class="form-control-feedback glyphicon glyphicon-ok"></span>
+       </div>
+      <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+     </form>
+      <div class="form-group">
+          <input type="text" class="form-control input-lg fontweight300" name="email" placeholder="Enter your Email ID" autocomplete="off"/>
+          <input type="text" class="form-control input-lg fontweight300" name="email" placeholder="Enter 1st Friend's Email ID" autocomplete="off"/>
+          <input type="text" class="form-control input-lg fontweight300" name="email" placeholder="Enter 2nd Friend's Email ID" autocomplete="off"/>
+          <input type="text" class="form-control input-lg fontweight300" name="email" placeholder="Enter 3rd Friend's Email ID" autocomplete="off"/>
+        </div>
+      <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      </div>
+  </div>
+</body>
+</html>
